@@ -1,3 +1,10 @@
+$color-light: #F9E2AF;
+$color-light-hover: #dec691;
+$color-medium: #009FBD;
+$color-medium-hover: #0084bd;
+$color-dark-main: #210062;
+$color-dark-secondary: #77037B;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,13 +16,14 @@ button {
   transition: 0.3s;
   border-radius: 5px;
   border: none;
-  background-color: #009FBD;
+  background-color: $color-medium;
   padding: 5px;
-  color: #77037B;
+  color: $color-dark-secondary;
   font-weight: bold;
-}
-button:hover {
-  background-color: #0084bd;
+
+  &:hover {
+    background-color: $color-medium-hover;
+  }
 }
 
 .container {
@@ -25,14 +33,14 @@ button:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background-color: #210062;
+  background-color: $color-dark-main;
   gap: 10px;
 }
 
 .card {
   width: 200px;
   padding: 10px;
-  background-color: #F9E2AF;
+  background-color: $color-light;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
@@ -41,13 +49,15 @@ button:hover {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  color: #77037B;
-}
-.card:hover {
-  background-color: #dec691;
-}
-.card img {
-  width: 100%;
+  color: $color-dark-secondary;
+
+  &:hover {
+    background-color: $color-light-hover;
+  }
+
+  img {
+    width: 100%;
+  }
 }
 
 .digimon-image {
@@ -73,17 +83,15 @@ button:hover {
 .Gatomon {
   background-image: url("./images/Gatomon.png");
 }
-
 .Guilmon {
   background-image: url("./images/Guilmon.png");
 }
-
 .Terriermon {
   background-image: url("./images/Terriermon.png");
 }
 
 .game-board {
-  background-color: #F9E2AF;
+  background-color: $color-light;
   border-radius: 10px;
   padding: 10px;
   display: flex;
@@ -96,7 +104,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  color: #009FBD;
+  color: $color-medium;
   justify-content: space-between;
   align-items: center;
 }
@@ -104,14 +112,14 @@ button:hover {
 .hunger-bar {
   height: 40px;
   width: 100%;
-  border: solid 1px #009FBD;
+  border: solid 1px $color-medium;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .hunger {
   height: 100%;
-  background-color: #009FBD;
+  background-color: $color-medium;
 }
 
 .eggs {
@@ -123,7 +131,7 @@ button:hover {
   overflow: auto;
   justify-content: center;
   align-content: flex-start;
-  background-color: #dec691;
+  background-color: $color-light-hover;
   border-radius: 5px;
 }
 
@@ -133,14 +141,13 @@ button:hover {
   align-items: center;
   gap: 3px;
   margin: 5px;
-}
-.egg img {
-  width: 50px;
+
+  img {
+    width: 50px;
+  }
 }
 
 .feed-btn {
   height: 40px;
   width: 100%;
 }
-
-/*# sourceMappingURL=App.css.map */
