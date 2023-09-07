@@ -1,12 +1,15 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {chooseDigimonName, setEggs, setHunger, setMoney} from "../features/info";
+import {chooseDigimonName, setLevel, setEggs, setHunger, setEvolution, setMoney} from "../features/info";
 import HungerBar from "../components/HungerBar";
 import Eggs from "../components/Eggs";
+import EvolutionBar from "../components/EvolutionBar";
+import {useNavigate} from "react-router-dom";
 
 const Game = () => {
 
     const dispatch = useDispatch();
+    const nav = useNavigate();
 
     useEffect(() => {
         fetch("http://localhost:8080/digimon")
@@ -14,18 +17,23 @@ const Game = () => {
             .then(data => {
                 dispatch(chooseDigimonName(data.digimon.name));
                 dispatch(setMoney(data.digimon.money));
+                dispatch(setLevel(data.digimon.level));
                 const timer = setInterval(getStats, 1000);
             })
     }, []);
     const digimon = useSelector(state => state.digimonName);
     const money = useSelector(state => state.money);
+    const level = useSelector(state => state.level);
 
     function getStats() {
         fetch("http://localhost:8080/digimon")
             .then(res => res.json())
             .then(data => {
                 dispatch(setHunger(data.digimon.hunger));
+                dispatch(setEvolution(data.digimon.evolution));
                 dispatch(setEggs(data.digimon.eggs))
+                dispatch(setLevel(data.digimon.level));
+                if (data.digimon.gameOver) nav('/')
             })
             .catch(error => console.log('error'))
     }
@@ -45,12 +53,13 @@ const Game = () => {
                 <div className="board-box">
                     <h1>Money: {money}$</h1>
                     <Eggs />
-                    <button onClick={feed} className="feed-btn">Feed {digimon} (10$)</button>
+                    <button onClick={feed} className="feed-btn">Feed (10$)</button>
                 </div>
                 <div className="board-box">
-                    <h1>{digimon}</h1>
-                    <div className={"digimon-image-large " + digimon}></div>
-                    <HungerBar/>
+                    <h1>Level {level}</h1>
+                    <div className={`digimon-image-large dig-${digimon}-level-${level}`}></div>
+                    <EvolutionBar />
+                    <HungerBar />
                 </div>
             </div>
         </div>

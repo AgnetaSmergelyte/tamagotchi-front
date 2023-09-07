@@ -30,10 +30,16 @@ button {
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   background-color: $color-dark-main;
+  padding: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -70,24 +76,10 @@ button {
 
 .digimon-image-large {
   width: 300px;
-  height: 300px;
+  flex: 1;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.Agumon {
-  background-image: url("./images/Agumon.png");
-}
-
-.Gatomon {
-  background-image: url("./images/Gatomon.png");
-}
-.Guilmon {
-  background-image: url("./images/Guilmon.png");
-}
-.Terriermon {
-  background-image: url("./images/Terriermon.png");
 }
 
 .game-board {
@@ -122,6 +114,27 @@ button {
   background-color: $color-medium;
 }
 
+.evolve {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: $color-dark-secondary;
+  gap: 10px;
+}
+
+.evolution-bar {
+  height: 25px;
+  width: 100%;
+  border: solid 1px $color-dark-secondary;;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.evolution {
+  height: 100%;
+  background-color: $color-dark-secondary;
+}
+
 .eggs {
   padding: 5px;
   display: flex;
@@ -150,4 +163,124 @@ button {
 .feed-btn {
   height: 40px;
   width: 100%;
+}
+
+.dig-1-level-1 {
+  background-image: url("./images/digimons/1/level1.png");
+}
+
+.dig-1-level-2 {
+  background-image: url("./images/digimons/1/level2.png");
+}
+
+.dig-1-level-3 {
+  background-image: url("./images/digimons/1/level3.png");
+}
+
+.dig-1-level-4 {
+  background-image: url("./images/digimons/1/level4.png");
+}
+
+.dig-1-level-5 {
+  background-image: url("./images/digimons/1/level5.png");
+}
+
+.dig-1-level-6 {
+  background-image: url("./images/digimons/1/level6.png");
+}
+
+.dig-2-level-1 {
+  background-image: url("./images/digimons/2/level1.png");
+}
+
+.dig-2-level-2 {
+  background-image: url("./images/digimons/2/level2.png");
+}
+
+.dig-2-level-3 {
+  background-image: url("./images/digimons/2/level3.png");
+}
+
+.dig-2-level-4 {
+  background-image: url("./images/digimons/2/level4.png");
+}
+
+.dig-2-level-5 {
+  background-image: url("./images/digimons/2/level5.png");
+}
+
+.dig-2-level-6 {
+  background-image: url("./images/digimons/2/level6.png");
+}
+
+.dig-3-level-1 {
+  background-image: url("./images/digimons/3/level1.png");
+}
+
+.dig-3-level-2 {
+  background-image: url("./images/digimons/3/level2.png");
+}
+
+.dig-3-level-3 {
+  background-image: url("./images/digimons/3/level3.png");
+}
+
+.dig-3-level-4 {
+  background-image: url("./images/digimons/3/level4.png");
+}
+
+.dig-3-level-5 {
+  background-image: url("./images/digimons/3/level5.png");
+}
+
+.dig-3-level-6 {
+  background-image: url("./images/digimons/3/level6.png");
+}
+
+.dig-4-level-1 {
+  background-image: url("./images/digimons/4/level1.png");
+}
+
+.dig-4-level-2 {
+  background-image: url("./images/digimons/4/level2.png");
+}
+
+.dig-4-level-3 {
+  background-image: url("./images/digimons/4/level3.png");
+}
+
+.dig-4-level-4 {
+  background-image: url("./images/digimons/4/level4.png");
+}
+
+.dig-4-level-5 {
+  background-image: url("./images/digimons/4/level5.png");
+}
+
+.dig-4-level-6 {
+  background-image: url("./images/digimons/4/level6.png");
+}
+
+.dig-5-level-1 {
+  background-image: url("./images/digimons/5/level1.png");
+}
+
+.dig-5-level-2 {
+  background-image: url("./images/digimons/5/level2.png");
+}
+
+.dig-5-level-3 {
+  background-image: url("./images/digimons/5/level3.png");
+}
+
+.dig-5-level-4 {
+  background-image: url("./images/digimons/5/level4.png");
+}
+
+.dig-5-level-5 {
+  background-image: url("./images/digimons/5/level5.png");
+}
+
+.dig-5-level-6 {
+  background-image: url("./images/digimons/5/level6.png");
 }

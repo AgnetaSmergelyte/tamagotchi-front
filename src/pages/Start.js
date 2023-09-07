@@ -2,7 +2,7 @@ import React from 'react';
 import {useNavigate} from "react-router-dom";
 
 const Start = () => {
-    const allDigimons = ['Agumon', 'Gatomon', 'Guilmon','Terriermon'];
+    const allDigimons = [1, 2, 3, 4, 5];
     const nav = useNavigate();
 
     function chooseDigimon(digimon) {
@@ -13,12 +13,13 @@ const Start = () => {
 
     return (
         <div className="container">
-            {allDigimons.map((x, i) =>
-                <div key={i} className='card' onClick={() => chooseDigimon(x)}>
-                    <div className={"digimon-image " + x}></div>
-                    <h3>{x}</h3>
-                </div>
-            )}
+            <div className="cards">
+                {allDigimons.map((x, i) =>
+                    <div key={i} className='card' onClick={() => chooseDigimon(x)}>
+                        <div className={`digimon-image dig-${x}-level-1`}></div>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
