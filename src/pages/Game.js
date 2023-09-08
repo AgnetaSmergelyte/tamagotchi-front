@@ -12,14 +12,16 @@ const Game = () => {
     const nav = useNavigate();
 
     useEffect(() => {
+        let timer = undefined;
         fetch("http://localhost:8080/digimon")
             .then(res => res.json())
             .then(data => {
                 dispatch(chooseDigimonName(data.digimon.name));
                 dispatch(setMoney(data.digimon.money));
                 dispatch(setLevel(data.digimon.level));
-                const timer = setInterval(getStats, 1000);
+                timer = setInterval(getStats, 1000);
             })
+        return () => clearInterval(timer);
     }, []);
     const digimon = useSelector(state => state.digimonName);
     const money = useSelector(state => state.money);
